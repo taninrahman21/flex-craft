@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import CardGrid from "./Components/Layouts/CardGrid/CardGrid";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+
+      <main>
+        {/* Layout Options */}
+        <section className="layout-options">
+          <div className="container">
+            <h2 class="section-title">Flex Layouts</h2>
+            <div class="options-btns">
+              <button class="option-btn active" data-category="hot">
+                Card Grid
+              </button>
+              <button class="option-btn" data-category="cold">
+                Cold Brew
+              </button>
+              <button class="option-btn" data-category="specialty">
+                Specialty
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Layout */}
+        <CardGrid />
+      </main>
+
+      <Footer />
+    </>
   );
 }
 
