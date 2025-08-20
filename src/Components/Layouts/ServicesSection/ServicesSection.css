@@ -1,0 +1,154 @@
+.services-section {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 40px 100px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 650px;
+  }
+  
+  .service1,
+  .service2,
+  .service3 {
+    flex: 1;
+  }
+  
+  /* ---------- Service Image ---------- */
+  .service-img {
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    position: relative;
+  }
+  
+  .service-img img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .service1 .service-img img { height: 500px; }
+  .service2 .service-img img { height: 400px; }
+  .service3 .service-img img { height: 300px; }
+  
+  .service-img:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* ---------- Service Content ---------- */
+  .service-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 83%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -100px;
+    max-height: 32px;
+    text-align: center;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+  }
+  
+  .service-content h2 {
+    font-size: 25px;
+    margin: 0 0 20px;
+    font-weight: 300;
+  }
+  
+  .service-content p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .service1:hover .service-content,
+  .service2:hover .service-content,
+  .service3:hover .service-content {
+    max-height: 300px;
+  }
+  
+  /* ---------- Service 3 Section ---------- */
+  .service3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .get-in-touch {
+    background: #063b27;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+  }
+  
+  .get-in-touch h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    font-weight: 400;
+  }
+  
+  .get-in-touch button {
+    background: #fff;
+    color: #063b27;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .get-in-touch button:hover {
+    background: #2a7d2e;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  .get-in-touch button svg {
+    font-size: 20px;
+    color: #fff;
+    background: #2a7d2e;
+    padding: 4px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .get-in-touch button:hover svg {
+    color: #2a7d2e;
+    background: #fff;
+  }
+
+
+  @media screen and (max-width: 768px)  {
+    .services-container {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .service-img {
+        margin-bottom: 40px;
+    }
+
+    .service-content {
+        margin-bottom: 20px;
+        margin-top: -140px;
+    }
+
+    .service3-main {
+        margin-bottom: 30px;
+    }
+  }
+  

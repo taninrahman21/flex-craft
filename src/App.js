@@ -1,6 +1,7 @@
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
 import CardGrid from "./Components/Layouts/CardGrid/CardGrid";
+import ServicesSection from "./Components/Layouts/ServicesSection/ServicesSection";
 import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                 Card Grid
               </button>
               <button class="option-btn" data-category="cold">
-                Cold Brew
+                Services Section
               </button>
               <button class="option-btn" data-category="specialty">
                 Specialty
@@ -28,7 +29,8 @@ function App() {
         </section>
 
         {/* Layout */}
-        <CardGrid />
+        {/* <CardGrid /> */}
+        <ServicesSection />
       </main>
 
       <Footer />
