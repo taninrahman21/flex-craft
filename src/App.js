@@ -1,39 +1,51 @@
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
 import CardGrid from "./Components/Layouts/CardGrid/CardGrid";
+import ImageGallery from "./Components/Layouts/ImageGallery/ImageGallery";
 import ServicesSection from "./Components/Layouts/ServicesSection/ServicesSection";
-import Navbar from "./Components/Navbar/Navbar";
+import { useState } from "react";
 
 function App() {
+  const layoutOptions = [
+    { id: 1, title: "Card Grid", component: <CardGrid /> },
+    { id: 2, title: "Services Section", component: <ServicesSection /> },
+    { id: 3, title: "Image Gallery", component: <ImageGallery /> },
+  ];
+
+  const [activeLayout, setActiveLayout] = useState(layoutOptions[0].id);
+
   return (
     <>
-      <Navbar />
-
       <main>
         {/* Layout Options */}
         <section className="layout-options">
           <div className="container">
-            <h2 class="section-title">Flex Layouts</h2>
-            <div class="options-btns">
-              <button class="option-btn active" data-category="hot">
-                Card Grid
-              </button>
-              <button class="option-btn" data-category="cold">
-                Services Section
-              </button>
-              <button class="option-btn" data-category="specialty">
-                Specialty
-              </button>
+            <h2 className="section-title">Flex Layouts</h2>
+            <div className="options-btns">
+              {layoutOptions.map((option) => (
+                <button
+                  key={option.id}
+                  className={`option-btn ${
+                    activeLayout === option.id ? "active" : ""
+                  }`}
+                  onClick={() => setActiveLayout(option.id)}
+                >
+                  {option.title}
+                </button>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Layout */}
-        {/* <CardGrid /> */}
-        <ServicesSection />
+        {/* Layout Display */}
+        <section className="layout-display">
+          {layoutOptions.map(
+            (option) =>
+              activeLayout === option.id && (
+                <div key={option.id}>{option.component}</div>
+              )
+          )}
+        </section>
       </main>
-
-      <Footer />
     </>
   );
 }

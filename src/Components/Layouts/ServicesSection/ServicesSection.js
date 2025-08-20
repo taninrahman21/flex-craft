@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ServicesSection.css";
 
 const ServicesSection = () => {
+  useEffect(() => {
+    const items = document.querySelectorAll(".service-item");
+    items.forEach((item) => item.classList.add("animate"));
+  }, []);
+
   return (
     <>
       <div className="services-section">
         <div className="services-container">
-          <div className="service1">
+          <div className="service1 service-item">
             <div className="service-img">
               <img
                 src="https://tridaniel.creedcreatives.net/diggie/wp-content/uploads/sites/28/2025/07/attractive-stylish-bearded-man-works-in-hothouse-2025-03-18-19-30-58-utc.jpg"
@@ -24,7 +29,7 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          <div className="service2">
+          <div className="service2 service-item">
             <div className="service-img">
               <img
                 src="https://tridaniel.creedcreatives.net/diggie/wp-content/uploads/sites/28/2025/07/female-customer-buying-flower-in-a-pot-floristry-2024-11-26-16-03-58-utc.jpg"
@@ -41,7 +46,7 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          <div className="service3">
+          <div className="service3 service-item">
             <div className="service3-main">
               <div className="service-img">
                 <img
